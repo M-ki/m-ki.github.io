@@ -1,123 +1,62 @@
-body,
-html {
-    height: 100%;
-}
-
 body {
-    background: #eeeeee;
-    margin: 0;
+  padding: 0;
+  margin: 0;
+  background: #232323;
 }
 
-header {
-    box-shadow: 0 2px 2px black;
+img#profile {
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  transform: scaleX(-1);
+  transition: width 1s, height 1s, box-shadow 1s;
+  cursor: none;
 }
 
-.nav-wrapper {
-    height: 60px;
-    display: flex;
-    background: #333333;
+#profile-holder {
+  float: left;
+  padding: 5px;
+  background: orange;
+  display: inline-block;
+  border-radius: 20% 50% 50% 50%;
+  box-shadow: 0px 0px 10px black;
 }
 
-.nav-wrapper .brand {
-    margin-left: 50px;
+#profile-holder:hover img {
+  width: 256px;
+  height: 256px;
+  transition-duration: 2s;
+  box-shadow: 0px 0px 10px black;
 }
 
-.nav-wrapper .brand span {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
+#nav {
+  width: 100%;
+  box-shadow: 0px 0px 10px black;
+  background: #555555;
 }
 
-.nav-wrapper .brand img {
-    margin-bottom: -15px;
-    height: 100px;
-    z-index: 10;
+nav > ul {
+  list-style: none;
+  margin: 0;
+  display: flex;
 }
 
-.nav-wrapper nav {
-    font-family: 'Roboto';
-    color: white;
-    width: 500px;
-    display: flex;
-    align-items: flex-end;
-    margin-left: 50px;
-    justify-content: space-around;
+nav li {
+  flex: 1;
+  padding: 10px;
 }
 
-.nav-wrapper nav a {
-    padding: 5px 2px;
-    margin-bottom: -1px;
-    border-bottom: 2px solid orange;
+nav a {
+  padding: 8px;
+  text-decoration: none;
+  color: orange;
+  font-family: 'Corbel';
+  border-bottom: 2px solid orange;
 }
 
-.hexagon {
-    position: relative;
-    width: 130px;
-    height: 100px;
-    background-color: #222222;
-    box-shadow: 0 0 5px black;
-    border-left: solid 2px orange;
-    border-right: solid 2px orange;
-    transition: height 0.3s;
-    cursor: pointer;
+nav a:hover {
+  background: orange;
+  color: white;
+  border-bottom: 2px solid black;
+  transition-duration: 0.5s;
 }
-
-.hexagon:after {
-    content: "";
-    position: absolute;
-    z-index: 1;
-    width: 91.92px;
-    height: 91.92px;
-    -webkit-transform: scaleY(0.5774) rotate(-45deg);
-    -ms-transform: scaleY(0.5774) rotate(-45deg);
-    transform: scaleY(0.5774) rotate(-45deg);
-    background-color: inherit;
-    left: 17.0381px;
-    box-shadow: 0 0 5px black;
-}
-
-
-.hexagon:after {
-    bottom: -45.9619px;
-    border-bottom: solid 2.8284px orange;
-    border-left: solid 2.8284px orange;
-}
-
-.hexagon span {
-    display: block;
-    position: absolute;
-    left: 0;
-    width: 126px;
-    height: 99%;
-    z-index: 2;
-    background: inherit;
-}
-
-.brand:hover {
-    height: 120px;
-    transition: height 0.3s;
-}
-
-.social-wrapper {
-    display: flex;
-    font-size: 40px;
-    color: white;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-grow: 3;
-}
-
-.social-wrapper i {
-    transform: scale(0.8);
-    transition: 0.3s;
-}
-
-.social-wrapper i:hover {
-    transform: scale(1);
-    transition: 0.3s;
-}
-
-.social-wrapper .fa-facebook:hover { color: rgb(6, 54, 143);}
-.social-wrapper .fa-linkedin:hover { color: rgb(46, 128, 196);}
-.social-wrapper .fa-github:hover { color: rgb(109, 14, 133);}
-.social-wrapper .fa-twitter:hover { color: rgb(0, 140, 255);}
