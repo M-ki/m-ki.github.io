@@ -1,62 +1,119 @@
 body {
-  padding: 0;
+  font-family: 'Rubik', sans-serif;
   margin: 0;
-  background: #232323;
 }
 
-img#profile {
-  border-radius: 50%;
-  width: 64px;
-  height: 64px;
-  transform: scaleX(-1);
-  transition: width 1s, height 1s, box-shadow 1s;
-  cursor: none;
-}
-
-#profile-holder {
-  float: left;
-  padding: 5px;
-  background: orange;
-  display: inline-block;
-  border-radius: 20% 50% 50% 50%;
-  box-shadow: 0px 0px 10px black;
-}
-
-#profile-holder:hover img {
-  width: 256px;
-  height: 256px;
-  transition-duration: 2s;
-  box-shadow: 0px 0px 10px black;
-}
-
-#nav {
-  width: 100%;
-  box-shadow: 0px 0px 10px black;
-  background: #555555;
-}
-
-nav > ul {
-  list-style: none;
-  margin: 0;
+header {
   display: flex;
+  align-items: center;
+  padding: 14px;
+  box-shadow: 0 0 10px black;
 }
 
-nav li {
-  flex: 1;
-  padding: 10px;
+header > div {
+  display: flex;
+  align-items: center;
+  height: 20pt;
+  font-size: 16pt;
+  width: 100%;
 }
 
-nav a {
-  padding: 8px;
-  text-decoration: none;
-  color: orange;
-  font-family: 'Corbel';
-  border-bottom: 2px solid orange;
+header h2 {
+  margin-left: 16px;
 }
 
-nav a:hover {
-  background: orange;
-  color: white;
-  border-bottom: 2px solid black;
+header button{
+  cursor: pointer;
+  outline: transparent;
+  border: 0;
+  background: transparent;
+  font-size: 20pt;
+  right: 0;
+  width: 20px;
+  height: 20px;
+}
+
+header button.closed {
+  visibility: hidden;
+}
+
+.ring-container {
+  position: relative;
+  right: 30px;
+  bottom: 16px;
+}
+
+.circle {
+  height: 14px;
+  width: 14px;
+  top: 12px;
+  left: 21px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.rings {
+  border: 3px solid black;
+  border-radius: 30px;
+  height: 20px;
+  width: 20px;
+  top: 6px;
+  left: 15px;
+  position: absolute;
+  animation: pulsate 1s ease-out;
+  animation-iteration-count: infinite;
+  opacity: 0.0;
+}
+
+header button:hover * {
+  background-color: grey;
   transition-duration: 0.5s;
+}
+
+header button * {
+  transition-duration: 0.5s;
+}
+
+@keyframes pulsate {
+  0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+  50% {opacity: 1.0;}
+  100% {-webkit-transform: scale(1, 1); opacity: 0.0;}
+}
+
+@media screen and (min-width: 360px) and (max-width: 768px) {
+  header {
+    justify-content: space-evenly;
+    padding: 15px 0px;
+  }
+
+  header div {
+    justify-content: space-around;
+    width: 75%;
+  }
+
+  header h2 {
+    margin: 0px;
+  }
+
+  header img {
+    height: 32px;
+    width: 32px;
+  }
+
+  .ring-container {
+    right: 30px;
+  }
+
+  header .ring-container .circle {
+    height: 11px;
+    width: 11px;
+  }
+
+  header .ring-container .rings {
+    height: 17px;
+    width: 17px;
+    right: -17px;
+    bottom: -17px;
+  }
 }
